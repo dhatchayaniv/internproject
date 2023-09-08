@@ -1,0 +1,141 @@
+h1{
+    font-size: 20px;
+    color:blue;
+    font-weight: bolder;
+    text-decoration: underline;
+    padding: 8px;
+}
+
+p{
+    font-size:18px;
+    font-weight: medium;
+    padding: 5px;
+    margin: 0;
+}
+
+.features h4{
+    font-size: 20px;
+    color:blue;
+    font-weight: bolder;
+    text-decoration: underline;
+    padding: 5px;
+    
+}
+
+.features p{
+   font-size: 20px;
+   font-weight: medium;
+   padding: 5px;
+   margin: 0;
+ }
+
+.heading {
+    color:red;
+    font-size: 20px;
+    padding:5px;
+    text-decoration: underline;
+}
+
+.sub-heading{
+    color:blue;
+    font-size: 18px;
+    padding: 10px;
+
+}
+
+.specifications h4{
+    color:blue;
+    font-size: 25px;
+    padding: 0px;
+    text-decoration: underline;
+}
+
+.benefits h3{
+    color:blue;
+    font-size: 20px;
+    padding: 0px;
+    text-decoration: underline;
+}
+
+.image-a10{
+    display: block;
+    float: right;
+    padding-right: 220px;
+    padding-top: 50px;
+    width: 500px;
+    height: 600px;
+}
+
+.benefits ul li{
+    color:black;
+    font-size: 18px;
+}
+
+.experience h4{
+    font-size: 20px;
+    color:blue;
+    font-weight: bolder;
+    text-decoration: underline;
+    padding: 5px
+}
+
+.experience p{
+    font-size: 18px;
+    font-weight: medium;
+    padding: 5px;
+    margin: 0
+}
+
+.price {
+    color:crimson;
+    font-size: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    border-color: yellow;;
+    border: 15px;
+    border-block: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.cart {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+
+
+ 
+
+  button{
+    margin-top:20px;
+    background-color:#5c73c7;
+    border-radius: 4px;
+    height: 44px;
+    font-weight: 600;
+    justify-content: space-between;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    border: none;
+    background-color: #2a359c;
+    color: #b8b9bd;
+    padding-right: 10px;
+     
+    
+}
+
+.buy{
+    text-align: center;
+
+}
+
+
+@media screen and(max-width:720px) {
+    .image-a10{
+        width: 20px;
+        height: 50px;
+    }
+    
+}
+  
+  

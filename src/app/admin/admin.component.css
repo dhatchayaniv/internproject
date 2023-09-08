@@ -1,0 +1,60 @@
+
+h1{
+    color:blueviolet;
+    text-align: center;
+    text-decoration: wavy;
+}
+
+.listImages{
+    display: flex;
+    padding: 10px 20px;
+}
+.img{
+    display: block;
+    padding: 10px 20px;
+}
+
+
+.listImages p{
+    text-align: center;
+    margin: 0;
+
+
+}
+
+.img-List2{
+    display: flex;
+    padding: 8px 20px;
+}
+
+.img-List2 p{
+    text-align: center;
+    margin: 0%;
+}
+
+
+.img-List3{
+    display: flex;
+    padding: 8px 20px;
+}
+
+.img-List3 p{
+    text-align: center;
+    margin: 0%;
+}
+
+a:hover{
+    color:red;
+}
+
+a:visited{
+    color:blue;
+
+}
+
+
+
+
+
+
+
