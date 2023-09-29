@@ -14,7 +14,7 @@ p{
 }
 
 .features h4{
-    font-size: 20px;
+    font-size: 30px;
     color:blue;
     font-weight: bolder;
     text-decoration: underline;
@@ -23,7 +23,7 @@ p{
 }
 
 .features p{
-   font-size: 20px;
+   font-size: 28px;
    font-weight: medium;
    padding: 5px;
    margin: 0;
@@ -57,13 +57,10 @@ p{
     text-decoration: underline;
 }
 
-.image-a6{
+.image-a1{
     display: block;
     float: right;
-    padding-right: 220px;
-    padding-top: 50px;
-    width: 500px;
-    height: 600px;
+    padding-right: 120px;
 }
 
 .benefits ul li{
@@ -71,7 +68,7 @@ p{
     font-size: 18px;
 }
 
-.experience h4{
+.safety h4{
     font-size: 20px;
     color:blue;
     font-weight: bolder;
@@ -79,7 +76,7 @@ p{
     padding: 5px
 }
 
-.experience p{
+.safety p{
     font-size: 18px;
     font-weight: medium;
     padding: 5px;
@@ -97,7 +94,6 @@ p{
     font-weight: bold;
     text-decoration: underline;
 }
-
 .cart {
     text-align: center;
     margin-top: 20px;
@@ -131,9 +127,11 @@ p{
 
 
 @media screen and(max-width:720px) {
-    .image-a6{
+    .image-a1{
         width: 20px;
         height: 50px;
     }
     
 }
+  
+  

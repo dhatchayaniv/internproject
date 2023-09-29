@@ -42,7 +42,10 @@ h1{
     text-align: center;
     margin: 0%;
 }
-
+a{
+    text-decoration: underline;
+    color:blue;
+}
 a:hover{
     color:red;
 }

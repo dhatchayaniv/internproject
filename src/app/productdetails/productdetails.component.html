@@ -1,0 +1,68 @@
+<h1>{{product.title}}</h1>
+<p>{{product.frstpara}}</p>
+
+<h1>{{product.des}}</h1>
+<p>{{product.intro}}</p>
+
+<div class="features">
+    <h4>{{product.features}}</h4>
+    <ul>
+        <li>{{product.lifrst}}</li>
+        
+        <li>{{product.lisec}}</li>
+
+     
+</ul>
+
+
+
+<div class="image-a1">
+    <img [src]="product.img" alt="image"/>
+</div>
+
+</div>
+<div class="specifications">
+<h4>{{product.headspec}}</h4>
+ <p class="heading">{{product.specone}}</p>
+
+
+<p class="heading">{{product.spectwo}}</p>
+
+
+<p class="heading">{{product.specthree}}</p>
+
+
+<p class="heading">{{product.specfour}}</p>
+
+</div>
+
+
+
+
+
+<div class="benefits">
+    <h3>{{product.benefit}}</h3>
+    <ul>
+        <li>{{product.beneone}}</li>
+        <li>{{product.benetwo}}</li>
+       
+    </ul>
+</div>
+
+<div class="safety">
+    <h4>{{product.safetyinfo}}</h4>
+
+    <p>{{product.safetypara}}</p>
+</div>
+
+<p>{{product.conclusion}}</p>
+
+<p class="price">Price in INR: {{product.price}}</p>
+<div class="cart"><button (click)="login()">Add to Cart</button>
+
+
+
+&nbsp; &nbsp; <button>Buy Now</button>
+
+</div>
+

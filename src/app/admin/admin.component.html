@@ -3,39 +3,41 @@
     
 
 
-<div class="img">
-    <img src="https://tse3.mm.bing.net/th?id=OIP.BUk9gI5IkSumf71yBrFUvgHaLg&pid=Api&P=0&h=180" alt="Toy1"/>
-    <p>Ring Building<br>Price in INR:100.00</p>
-    <a href="/ring"><p>View Details</p></a>
-    </div>
-    
+    <div class="img">
+        <img [src]="productList[0].img" alt="'Toy1" />
+        <p>{{ productList[0].title }}</p>
+        <p>Price in INR: {{ productList[0].price }}</p>
+        <a [routerLink]="['/productdetails',0]"><p>View Details</p></a>
+</div>
+
+
     
     
     <div class="img">
-        <img src="https://tse4.mm.bing.net/th?id=OIP.scG3l4LvQpMz08cLcM4FKwHaHa&pid=Api&P=0&h=180" alt="Toy2"/>
-        <p>Remote Aeroplane<br>Price in INR:250.00</p>
-        <a href="/aeroplane"><p>View Details</p></a>
+        <img [src]="productList[1].img" alt="Toy2"/>
+        <p>{{ productList[1].title}}<br>Price in INR:  {{ productList[1].price }}</p>
+        <a [routerLink]="['/productdetails',1]"><p>View Details</p></a>
         </div>
     
     
         <div class="img">
-            <img src="https://tse4.mm.bing.net/th?id=OIP.s9FLABsZY4NY-l0NRalsKQHaE8&pid=Api&P=0&h=180" alt="Toy3"/>
-            <p>Mini Kitchen<br>Price in INR:140.00</p>
-            <p><a href="/kitchen">View Details</a></p>
+            <img [src]="productList[2].img" alt="Toy3" />
+            <p>{{ productList[2].title }}<br>Price in INR: {{ productList[2].price }}</p>
+            <a [routerLink]="['/productdetails',2]"><p>View Details</p></a>
+        </div>
+        
+
+        <div class="img">
+            <img [src] ="productList[3].img" alt="Toy4"/>
+            <p>{{ productList[3].title }}<br>Price in INR: {{ productList[3].price }}</p>
+            <a [routerLink]="['/productdetails',3]"><p>View Details</p></a>
         </div>
 
 
         <div class="img">
-            <img src="https://tse4.mm.bing.net/th?id=OIP.mNb9LNQROX0PJdiJVqUABQHaGH&pid=Api&P=0&h=180" alt="Toy4"/>
-            <p>Tiny Dragon <br>Price in INR:300.08</p>
-            <p><a href="/dragon">View Details</a></p>
-        </div>
-
-
-        <div class="img">
-            <img src="https://tse4.mm.bing.net/th?id=OIP.SGM_Nz-VjFE6VintLzQuqAHaHa&pid=Api&P=0&h=180" alt="Toy5"/>
-            <p>Dancing Bunny <br>Price in INR:500.08</p>
-            <p><a href="/bunny">View Details</a></p>
+            <img [src]="productList[4].img" alt="Toy5"/>
+            <p> {{productList[4].title}} <br>Price in INR: {{productList[4].price}}</p>
+            <a [routerLink]="['/productdetails',4]"><p>View Details</p></a>
         </div>
 
     </div>
@@ -43,40 +45,37 @@
 <div class="img-List2">
     
         <div class="img">
-            <img src="https://tse3.mm.bing.net/th?id=OIP.hlltF8FpzoZqioPqlLTGswHaHa&pid=Api&P=0&h=180" alt="Toy6"/>
-            <p>Vegetables <br>Price in INR:234.08</p>
-            <p><a href="/veggie">View Details</a></p>
+            <img [src]="productList[5].img" alt="Toy6"/>
+             <p>{{productList[5].title}}<br>Price in INR : {{ productList[5].price}}</p>
+             <a [routerLink]="['/productdetails',5]"><p>View Details</p></a>
         </div>
 
         <div class="img">
-            <img src="https://i5.walmartimages.com/seo/Ty-Barley-the-Dog-Classic_daef84fd-5d2a-4ddd-8783-1437bbb53fe6_1.eb7203114ecf9767b8d24d109fd1a1f3.jpeg?odnHeight=160&odnWidth=160&odnBg=FFFFFF" alt="Toy7"/>
-
-            <br>
-            <br>
-            <p>Barking Puppy<br>Price in INR:760.08</p>
-            
-            <p><a href="/puppy">View Details</a></p>
+            <img [src]="productList[6].img" alt="Toy7"/>
+<br><br>
+            <p>{{productList[6].title}}<br>Price in INR: {{productList[6].price}}</p>
+            <a [routerLink]="['/productdetails',6]"><p>View Details</p></a>
         </div>
 
 
         <div class="img">
-            <img src="https://tse1.mm.bing.net/th?id=OIP.1ENfZOQpmrrJ45VYzt6vMgHaFj&pid=Api&P=0&h=180" alt="Toy8"/>
-            <p>Bead Ladder<br>Price in INR:450.08</p>
-            <p><a href="/bead">View Details</a></p>
+            <img [src]="productList[7].img" alt="Toy8"/>
+            <p>{{productList[7].title}}<br>Price in INR: {{productList[7].price}}</p>
+            <a [routerLink]="['/productdetails',7]"><p>View Details</p></a>
         </div>
 
 
         <div class="img">
-            <img src="https://tse1.mm.bing.net/th?id=OIP.Kn9R4y1tbPy_xeMBgLqbQAHaHa&pid=Api&P=0&h=180" alt="Toy9"/>
-            <p>Riding Child<br>Price in INR:890.08</p>
-            <p><a href="/ride">View Details</a></p>
+            <img [src]="productList[8].img" alt="Toy9"/>
+            <p>{{productList[8].title}}<br>Price in INR: {{productList[8].price}}</p>
+            <a [routerLink]="['/productdetails',8]"><p>View Details</p></a>
         </div>
         
 
         <div class="img">
-            <img src="https://tse1.mm.bing.net/th?id=OIP.tSBQjloduqR-IRvvscbKqgHaFk&pid=Api&P=0&h=180" alt="Toy10"/>
-            <p>Musical Piano for Kids<br>Price in INR:550.08</p>
-            <p><a href="/music">View Details</a></p>
+            <img [src]="productList[9].img" alt="Toy10"/>
+            <p> {{ productList[9].title}} <br>Price in INR: {{productList[9].price}}</p>
+            <a [routerLink]="['/productdetails',9]"><p>View Details</p></a>
         </div>
 </div>
 
@@ -85,40 +84,36 @@
 
 
     <div class="img">
-        <img src="https://tse2.mm.bing.net/th?id=OIP.AwhzvWR7n6dAJ-f9e4AqFwHaHa&pid=Api&P=0&h=180" alt="Toy11"/>
-        <p>Robot for Child<br>Price in INR:1230.00</p>
-        <p><a href="/robot">View Details</a></p>
+        <img [src]="productList[10].img" alt="Toy11"/>
+        <p>{{ productList[10].title}}<br>Price in INR: {{productList[10].price}} </p>
+        <a [routerLink]="['/productdetails',10]"><p>View Details</p></a>
     </div>
    
          <div class="img">
-        <img src="https://tse4.mm.bing.net/th?id=OIP.J2opsR6uj4iRS4arnQtzOAAAAA&pid=Api&P=0&h=180" alt="Toy12"/>
-        <p>Cat Toys<br>Price in INR:230.00</p>
-        <p><a href="/cat">View Details</a></p>
+        <img [src]="productList[11].img" alt="Toy12"/>
+        <p>{{productList[11].title}}<br>Price in INR: {{productList[11].price}}</p>
+        <a [routerLink]="['/productdetails',11]"><p>View Details</p></a>
     </div>
 
     <div class="img">
-        <img src="https://tse1.mm.bing.net/th?id=OIP.t70_FjupB6vIAYpziInVkAHaE8&pid=Api&P=0&h=180" alt="Toy13"/>
-        <p>Wood Train<br>Price in INR:830.90</p>
-        <p><a href="/train">View Details</a></p>
+        <img [src]="productList[12].img" alt="Toy13"/>
+        <p>{{productList[12].title}}<br>Price in INR: {{productList[12].price}}</p>
+        <a [routerLink]="['/productdetails',12]"><p>View Details</p></a>
     </div>
       
-
-    
     <div class="img">
-
-        <img src="https://tse2.mm.bing.net/th?id=OIP.ckBvfZk-f-TUDucZZ_JTSgHaHm&pid=Api&P=0&h=180" alt="Toy14"/>
-
-        <p>Block Shapes<br>Price in INR:530.90</p>
-        <p><a href="/shapes">View Details</a></p>
+        <img [src]="productList[13].img" alt="Toy14"/>
+        <p>{{productList[13].title}}<br>Price in INR: {{productList[13].price}}</p>
+        <a [routerLink]="['/productdetails',13]"><p>View Details</p></a>     
+ 
     </div>
 
-
     <div class="img">
-        <img src="https://i.ebayimg.com/thumbs/images/g/FdYAAOSwk1haOiyl/s-l225.webp" alt="Toy15"/>
+        <img [src]="productList[14].img" alt="Toy15"/>
         <br>
         <br>
-        <p>Wood Toy<br>Price in INR:650.90</p>
-        <p><a href="/woodtoy">View Details</a></p>
+        <p>{{productList[14].title}}<br>Price in INR:  {{productList[14].price}}</p>
+        <a [routerLink]="['/productdetails',14]"><p>View Details</p></a>    
     </div>
 
 </div>
