@@ -16,6 +16,10 @@
         *Email address is required
       </div>
 
+      <div *ngIf="form.controls['email'].hasError('pattern') && form.controls['email'].touched" class="alert">
+        *Invalid email format
+      </div>
+
     <input type="password" placeholder="password"  formControlName="password" required/>
     <div *ngIf="form.controls['password']?.invalid && form.controls['password']?.touched" class="alert">
         *Password is required

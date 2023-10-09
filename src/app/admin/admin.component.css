@@ -6,8 +6,11 @@ h1{
 }
 
 .listImages{
-    display: flex;
-    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 10px; 
+
+
 }
 .img{
     display: block;
@@ -54,6 +57,39 @@ a:visited{
     color:blue;
 
 }
+
+
+
+@media screen and (max-width: 768px) {
+    .listImages {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .img,
+    .img-List2,
+    .img-List3 {
+        padding: 5px 10px;
+    }
+
+    a {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .listImages {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .img,
+    .img-List2,
+    .img-List3 {
+        padding: 5px;
+    }
+}
+
 
 
 

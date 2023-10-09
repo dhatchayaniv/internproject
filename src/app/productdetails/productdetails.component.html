@@ -1,8 +1,17 @@
+
+
+
 <h1>{{product.title}}</h1>
 <p>{{product.frstpara}}</p>
 
+
+<div class="image-a1">
+    <img [src]="product.img" alt="image"/>
+</div>
+
 <h1>{{product.des}}</h1>
 <p>{{product.intro}}</p>
+
 
 <div class="features">
     <h4>{{product.features}}</h4>
@@ -16,9 +25,7 @@
 
 
 
-<div class="image-a1">
-    <img [src]="product.img" alt="image"/>
-</div>
+
 
 </div>
 <div class="specifications">
@@ -62,7 +69,9 @@
 
 
 
-&nbsp; &nbsp; <button>Buy Now</button>
+    &nbsp; &nbsp; <button>Buy Now</button>
+    
+    </div>
 
-</div>
+
 

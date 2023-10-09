@@ -1,7 +1,8 @@
+
+
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { useThemeWithoutDefault } from '@mui/system';
 import { AuthService } from 'src/app/auth.service';
 
 @Component({
@@ -11,36 +12,21 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class LoginComponent {
 
-  form:FormGroup=this.fb.group({
-    username:['',Validators.required],
-    email:['',Validators.required],
-    password:['',Validators.required]
-
+  form: FormGroup = this.fb.group({
+    username: ['', Validators.required],
+    email: [
+      '',
+      [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)]
+    ],
+    password: ['', Validators.required]
   });
-   constructor(private authService:AuthService,private fb: FormBuilder,private router:Router){
 
-    
-   }
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {}
 
+  login() {
+  
+        this.router.navigateByUrl('/admin');
+      }
+    }
+  
 
-
-
-
-        login(){
-
-        let user= this.authService.login(
-          this.form.value.username, 
-          this.form.value.email, 
-          this.form.value.password);
-
-          if(!user){
-            alert('Invalid data is provided');
-          }
-          else{
-            this.router.navigateByUrl('/admin');
-          }
-
-         
-
-        }    
-}

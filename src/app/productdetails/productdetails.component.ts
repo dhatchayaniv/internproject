@@ -361,18 +361,27 @@ export class ProductdetailsComponent implements OnInit {
 
 ];
 
-  constructor(private route:ActivatedRoute){}
+constructor(private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      const productId = params['id']; 
+ngOnInit() {
   
-      this.product = this.productDetails.find((product) => product.id === productId);
-    });
-  }
-  login(){
-    alert("Item is added to cart successfully")
-  }
-  
+  this.route.params.subscribe(params => {
+    const productId = params['id'];
+
+   
+    this.product = this.productDetails.find(item => item.id === productId);
+  });
 }
+
+login() {
+  alert("Item added to cart successfully");
+}
+}
+
+
+
+
+
+
+
 

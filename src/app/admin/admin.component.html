@@ -1,124 +1,22 @@
+
+
+
 <h1>Kidzz World</h1>
 <div class="listImages">
-    
-
-
-    <div class="img">
-        <img [src]="productList[0].img" alt="'Toy1" />
-        <p>{{ productList[0].title }}</p>
-        <p>Price in INR: {{ productList[0].price }}</p>
-        <a [routerLink]="['/productdetails',0]"><p>View Details</p></a>
+    <ng-container *ngFor="let item of productList; let i = index">
+        <div class="img">
+            <img [src]="item.img" alt="Toy"/>
+            <p>{{ item.title }}</p>
+            <p>Price in INR: {{ item.price }}</p>
+            <a [routerLink]="['/productdetails', i]">
+                <p>View Details</p>
+            </a>
+        </div>
+    </ng-container>
 </div>
 
 
+
+
     
-    
-    <div class="img">
-        <img [src]="productList[1].img" alt="Toy2"/>
-        <p>{{ productList[1].title}}<br>Price in INR:  {{ productList[1].price }}</p>
-        <a [routerLink]="['/productdetails',1]"><p>View Details</p></a>
-        </div>
-    
-    
-        <div class="img">
-            <img [src]="productList[2].img" alt="Toy3" />
-            <p>{{ productList[2].title }}<br>Price in INR: {{ productList[2].price }}</p>
-            <a [routerLink]="['/productdetails',2]"><p>View Details</p></a>
-        </div>
-        
-
-        <div class="img">
-            <img [src] ="productList[3].img" alt="Toy4"/>
-            <p>{{ productList[3].title }}<br>Price in INR: {{ productList[3].price }}</p>
-            <a [routerLink]="['/productdetails',3]"><p>View Details</p></a>
-        </div>
-
-
-        <div class="img">
-            <img [src]="productList[4].img" alt="Toy5"/>
-            <p> {{productList[4].title}} <br>Price in INR: {{productList[4].price}}</p>
-            <a [routerLink]="['/productdetails',4]"><p>View Details</p></a>
-        </div>
-
-    </div>
-
-<div class="img-List2">
-    
-        <div class="img">
-            <img [src]="productList[5].img" alt="Toy6"/>
-             <p>{{productList[5].title}}<br>Price in INR : {{ productList[5].price}}</p>
-             <a [routerLink]="['/productdetails',5]"><p>View Details</p></a>
-        </div>
-
-        <div class="img">
-            <img [src]="productList[6].img" alt="Toy7"/>
-<br><br>
-            <p>{{productList[6].title}}<br>Price in INR: {{productList[6].price}}</p>
-            <a [routerLink]="['/productdetails',6]"><p>View Details</p></a>
-        </div>
-
-
-        <div class="img">
-            <img [src]="productList[7].img" alt="Toy8"/>
-            <p>{{productList[7].title}}<br>Price in INR: {{productList[7].price}}</p>
-            <a [routerLink]="['/productdetails',7]"><p>View Details</p></a>
-        </div>
-
-
-        <div class="img">
-            <img [src]="productList[8].img" alt="Toy9"/>
-            <p>{{productList[8].title}}<br>Price in INR: {{productList[8].price}}</p>
-            <a [routerLink]="['/productdetails',8]"><p>View Details</p></a>
-        </div>
-        
-
-        <div class="img">
-            <img [src]="productList[9].img" alt="Toy10"/>
-            <p> {{ productList[9].title}} <br>Price in INR: {{productList[9].price}}</p>
-            <a [routerLink]="['/productdetails',9]"><p>View Details</p></a>
-        </div>
-</div>
-
-
-<div class="img-List3">
-
-
-    <div class="img">
-        <img [src]="productList[10].img" alt="Toy11"/>
-        <p>{{ productList[10].title}}<br>Price in INR: {{productList[10].price}} </p>
-        <a [routerLink]="['/productdetails',10]"><p>View Details</p></a>
-    </div>
-   
-         <div class="img">
-        <img [src]="productList[11].img" alt="Toy12"/>
-        <p>{{productList[11].title}}<br>Price in INR: {{productList[11].price}}</p>
-        <a [routerLink]="['/productdetails',11]"><p>View Details</p></a>
-    </div>
-
-    <div class="img">
-        <img [src]="productList[12].img" alt="Toy13"/>
-        <p>{{productList[12].title}}<br>Price in INR: {{productList[12].price}}</p>
-        <a [routerLink]="['/productdetails',12]"><p>View Details</p></a>
-    </div>
-      
-    <div class="img">
-        <img [src]="productList[13].img" alt="Toy14"/>
-        <p>{{productList[13].title}}<br>Price in INR: {{productList[13].price}}</p>
-        <a [routerLink]="['/productdetails',13]"><p>View Details</p></a>     
- 
-    </div>
-
-    <div class="img">
-        <img [src]="productList[14].img" alt="Toy15"/>
-        <br>
-        <br>
-        <p>{{productList[14].title}}<br>Price in INR:  {{productList[14].price}}</p>
-        <a [routerLink]="['/productdetails',14]"><p>View Details</p></a>    
-    </div>
-
-</div>
-
- 
-
-
 
