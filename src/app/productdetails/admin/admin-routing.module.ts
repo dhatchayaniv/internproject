@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
-import { ProductdetailsComponent } from '../productdetails/productdetails.component';
+import { ProductdetailsComponent } from '../productdetails.component';
 
 
 

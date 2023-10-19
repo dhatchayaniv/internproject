@@ -7,11 +7,13 @@ import { LoginComponent } from './public/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './cart/cart.component';
 
 
 const routes: Routes = [
   
   { path: 'productdetails/:id', component: ProductdetailsComponent },
+  {path:'cart',component:CartComponent}
 ];
 
 
@@ -20,6 +22,7 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     ProductdetailsComponent,
+    CartComponent,
     
   
     

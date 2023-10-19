@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../product.service'; 
 
 @Component({
   selector: 'app-productdetails',
@@ -7,381 +8,45 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./productdetails.component.css']
 })
 export class ProductdetailsComponent implements OnInit {
-  product:any
-  productDetails = [
-    {
-    id:'0',
-    title:'Product Title',
-    frstpara:'Rainbow Ring Building Toy for Kids - Creative Colorful Stacking Rings Set',
-    des:'Product Description',
-    intro:"Introducing the Rainbow Ring Building Toy, a delightful and educational playset designed to engage your child's imagination while enhancing their cognitive and fine motor skills. This set of vibrant, stackable rings offers hours of fun as your little one explores colors, sizes, and spatial relationships.",
-    features:'Key features',
-    lifrst:"Vibrant Colors: Our set includes a variety of rings in eye-catching colors that stimulate your child's visual senses and make learning through play exciting.",
-    lisec:'Easy to Grasp: The rings are designed with small hands in mind, making it simple for even the youngest children to grip, stack, and explore.',
-    img:'https://images-na.ssl-images-amazon.com/images/I/41yi6I5tv7L.jpg',
-    headspec:"Specifications",
-    specone:'Material: PA-free, child-safe plastic',
-    spectwo:'Ring Sizes: Varied sizes from 1 inch to 4 inches in diamete',
-    specthree:"Recommended Age: 2 years and up",
-    specfour:'Package Includes: A set of colorful building rings',
-    benefit:'Benefits',
-    beneone:'Enhances fine motor skills and hand-eye coordination.',
-    benetwo:'Encourages cognitive development through hands-on exploration.',
-    safetyinfo:'Safety Information:',
-    safetypara:"This toy meets or exceeds all safety standards for children's products. It's made from non-toxic materials and has smooth edges, ensuring your child's safety during play. However, adult supervision is recommended, especially for younger children.",
-    conclusion:"Give your child the gift of colorful learning and play with the Rainbow Building Ring Toy. Watch as they discover new ways to stack, sort, and create, all while developing essential skills. Order now and let the building journey begin!",
-    price:'100.00'
-  },
-  {
-    id:'1',
-    title:'Product Title',
-    frstpara:'High-Speed Remote-Controlled Airplane',
-    des:'Product Description',
-    intro:"Elevate your outdoor adventures with our High-Speed Remote-Controlled Airplane. This sleek and powerful aircraft is designed for thrill-seekers and aviation enthusiasts of all ages. Experience the joy of flight like never before!",
-    features:'Key features',
-    lifrst:'High-Speed Performance: Soar through the skies with incredible speed and precision. Our airplane is engineered for thrilling aerobatics and high-speed maneuvers.',
-    lisec:'Long Battery Life: Enjoy extended flight time with a powerful rechargeable battery. Spend more time in the air and less time charging.',
-    img:"https://img.freepik.com/premium-photo/close-up-small-orange-blue-airplane-white-surface-generative-ai_900396-63226.jpg",
-    headspec:'Specifications:',
-    specone:'Wingspan: 24 inches',
-    spectwo:'Remote Control Range: Up to 300 feet',
-    specthree:'Flight Time: Approximately 15 minutes per charge',
-    specfour:'Battery: Rechargeable lithium-polymer',
-    benefit:'Benefits:',
-    beneone:'Experience the thrill of flying an RC airplane.',
-    benetwo:'Encourage outdoor play and physical activity.',
-    safetyinfo:'Safety Information',
-    safetypara:'While our remote-controlled airplane offers thrilling entertainment, safety always comes first. ',
-    conclusion:"Prepare for takeoff and embark on incredible adventures with our High-Speed Remote-Controlled Airplane. Whether you're a beginner or an experienced pilot, this aircraft promises endless excitement in the skies. Order now and make your dreams of flying a reality!",
-    price:'250.02'
+  product: any;
+  router: any;
 
-  },
-  {
-    id:'2',
-    title:'Product Title',
-    frstpara:'Mini Kitchen Toy Set for Kids',
-    des:'Product Description',
-    intro:"Ignite your child's culinary creativity with our Mini Kitchen Toy Set. This delightful playset is designed to inspire young chefs and provide hours of imaginative fun. Let your child explore the world of cooking in a safe and enjoyable way!",
-    features:'Key Features',
-    lifrst:'Realistic Accessories: The set comes with pots, pans, utensils, and play food items, making it feel like a genuine kitchen experience.',
-    lisec:'Educational Play: Encourage learning through play as children practice fine motor skills, creativity, and social interaction while cooking with friends or family.',
-    img:'https://m.media-amazon.com/images/I/71jhgiPv85L._AC_UL600_FMwebp_QL65_.jpg',
-    headspec:'Specifications:',
-    specone:'Material: BPA-free plastic',
-    spectwo:'Recommended Age: 3 years and up',
-    specthree:'Package Includes: Miniature kitchen appliances, cookware, and play food items',
-    specfour:'Encourages creativity',
-    benefit:'Benefits:',
-    beneone:'Enhances fine motor skills and hand-eye coordination.',
-    benetwo:'Provides a safe and enjoyable introduction to the world of cooking.',
-    safetyinfo:'Safety Information',
-    safetypara:"Our Mini Kitchen Toy Set is designed with child safety as a top priority. It meets or exceeds all safety standards for children's products and is made from non-toxic materials. However, adult supervision is recommended, especially for younger children.",
-    conclusion:"Nurture your child's culinary talents and let their imagination run wild with our Mini Kitchen Toy Set. Whether they're preparing make-believe meals for family and friends or experimenting with their own recipes, this toy set promises endless fun in the world of mini cooking. Order now and watch your little chef shine!",
-    price:'140.08'
-    
-  },
-  {
-    id:'3',
-    title:'Product Title',
-    frstpara:'Introducing the Tiny Dragon Toy – Your New Playtime Companion!',
-    des:'Product Description',
-    intro:"Unleash the magic of imagination with our adorable Tiny Dragon Toy. This enchanting little creature is the perfect addition to your child's toy collection, igniting hours of fantastical adventures. Crafted with attention to detail, this miniature dragon will capture hearts and spark creativity.",
-    features:'Key Features',
-    lifrst:'Miniature Marvel: This tiny dragon is intricately designed with vibrant colors, detailed scales, and a friendly expression that brings it to life.',
-    lisec:'Durable Design: Crafted from child-safe materials, this dragon can withstand the rigors of playtime while ensuring safety.',
-    img:'https://images-na.ssl-images-amazon.com/images/I/71xhj9GuB3L._AC_UL232_SR232,232_.jpg',
-    headspec:'Specifications:',
-    specone:'Material: BPA-free plastic',
-    spectwo:'Recommended Age: 3 years and up',
-    specthree:'Package Includes: A Tiny Dragon Toy with the letters for learning',
-    specfour:'Encourages creativity',
-    benefit:'Benefits:',
-    beneone:'Imagination Booster: Encourage creative play as your child embarks on magical journeys with their new dragon friend.',
-    benetwo:"Portable Pal: Its compact size means it's always ready for adventures, providing comfort and entertainment wherever your child goes.",
-    safetyinfo:'Safety Information',
-    safetypara:"Rest easy knowing that our Tiny Dragon Toy meets the highest safety standards for children's toys. It's made from non-toxic materials, ensuring it's gentle on your child and the environment.",
-    conclusion:"Elevate playtime to new heights with the Tiny Dragon Toy. Watch as your child's imagination soars, creating magical tales and forming an unbreakable bond with their new mythical friend. Add this enchanting companion to your cart today and let the adventures begin!",
-    price:'300.08'
-  },
-  {
-    id:'4',
-    title:'Product Title',
-    frstpara:"Introducing the Dancing Bunny - Your Child's New Dance Partner!",
-    des:'Product Description',
-    intro:"Get ready to dance and hop to the rhythm with our adorable Dancing Bunny! This charming toy will light up your child's playtime with its infectious moves and delightful tunes. Whether your little one is a budding dancer or just looking for a furry friend to groove with, the Dancing Bunny is here to entertain and spread joy.",
-    features:'Key Features',
-    lifrst:"Dance Party Ready: Watch in amazement as the Dancing Bunny shows off its dance moves to catchy music. It's a one-bunny dance party!",
-    lisec:'Easy Operation: Simple buttons make it a breeze for even the youngest children to control and enjoy the dance performance.',
-    img:'https://m.media-amazon.com/images/I/61+RRZnf0GL._AC_UL600_FMwebp_QL65_.jpg',
-    headspec:'Specifications:',
-    specone:'Material: BPA-free plastic',
-    spectwo:'Recommended Age: 3 years and up',
-    specthree:'Package Includes: A  Lithium - Ion Rechargeable Battery and the parts of the Bunny',
-    specfour:'Mind Refresher',
-    benefit:'Benefits:',
-    beneone:'Entertainment Extraordinaire: Provides hours of entertainment, keeping your child engaged and giggling with delight.',
-    benetwo:"Musical Learning: Introduces children to music and rhythm, stimulating their auditory senses.",
-    safetyinfo:'Safety Information',
-    safetypara:"Safety is our priority. The Dancing Bunny is crafted from child-safe materials, ensuring it's gentle on your child's skin and environment. It complies with all safety standards for children's toys, giving parents peace of mind.",
-    conclusion:"Get ready for a dance-off like no other! The Dancing Bunny is more than just a toy; it's a friend that brings laughter and rhythm into your child's life. Order now and let the dance party begin in your home!",
-    price:'500.00'
-  },
-  {
-    id:'5',
-    title:'Product Title',
-    frstpara:"Vegetable Toys for Kids – Fun and Educational Playtime!",
-    des:'Product Description',
-    intro:"Introduce your child to the world of vegetables with our delightful Vegetable Toys. These adorable and educational playsets are designed to make learning about vegetables fun and exciting for young minds. From vibrant carrots to cute broccoli, our vegetable toys offer hours of imaginative play while fostering a love for healthy eating.",
-    features:'Key Features',
-    lifrst:"Realistic Design: Our vegetable toys are meticulously crafted to resemble real vegetables, sparking curiosity and sensory exploration.",
-    lisec:'Educational Play: Encourage learning about healthy foods, colors, and shapes through hands-on play.',
-    img:'https://m.media-amazon.com/images/I/61M1YS0kPeL._SX679_.jpg',
-    headspec:'Specifications:',
-    specone:'Material: BPA-free plastic',
-    spectwo:'Recommended Age: 3 years and up',
-    specthree:'Package Includes: Vegetables with its natural colour for learning',
-    specfour:'Encourages the art of learning',
-    benefit:'Benefits:',
-    beneone:'Early Learning: Help your child develop cognitive skills, fine motor abilities, and creativity while they engage with these vegetable toys.',
-    benetwo:"Imaginative Play: Watch as your little one creates stories, cooks up imaginary meals, and explores the world of healthy eating.",
-    safetyinfo:'Safety Information',
-    safetypara:"We prioritize your child's safety. These vegetable toys are free from small parts and choking hazards, making them suitable for even the youngest children. They also meet or exceed all safety standards for children's products.",
-    conclusion:"Our Vegetable Toys are affordably priced, ensuring that every child can enjoy the benefits of educational play. Add them to your cart today and inspire a lifelong love for vegetables!",
-    price:'234.08'
-  },
-  {
-    id:'6',
-    title:'Product Title',
-    frstpara:"Barking Puppy Toy - A Playful Companion for Your Child!",
-    des:'Product Description',
-    intro:"Introducing the Barking Puppy Toy, the perfect furry friend for your child's playtime adventures. This adorable plush puppy not only brings cuddles and comfort but also adds an element of interactive fun with its lifelike barking and wagging tail. Your child will cherish the joy of having a loyal pet right at home!",
-    features:'Key Features',
-    lifrst:"Realistic Barking: This lovable puppy toy emits realistic barking sounds, creating an immersive play experience.",
-    lisec:"Wagging Tail: Watch as the puppy's tail wags when your child interacts with it, enhancing the sense of play.",
-    img:'https://i5.walmartimages.com/seo/Ty-Barley-the-Dog-Classic_daef84fd-5d2a-4ddd-8783-1437bbb53fe6_1.eb7203114ecf9767b8d24d109fd1a1f3.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF',
-    headspec:'Specifications:',
-    specone:'Material: BPA-free plastic',
-    spectwo:'Recommended Age: 3 years and up',
-    specthree:'Package Includes: A Rechargeable Lithium-Ion Battery',
-    specfour:'Encourages the art of joy',
-    benefit:'Benefits:',
-    beneone:'Imaginative Play: Encourage your child to embark on imaginative adventures with their new furry friend.',
-    benetwo:"Sensory Development: The soft texture and interactive features stimulate sensory development and emotional bonding.",
-    safetyinfo:'Safety Information',
-    safetypara:"The Barking Puppy Toy is designed with safety in mind. It's free from small parts and meets or exceeds all safety standards for children's toys. Rest assured, your child can play with their new puppy companion worry-free.",
-    conclusion:"The Barking Puppy Toy offers affordable playtime happiness. Add it to your cart today and witness the smiles it brings to your child's face!",
-    price:'768.08'
-  },
-  {
-    id:'7',
-    title:'Product Title',
-    frstpara:"Colorful Bead Ladder for Kids - Sparking Creativity and Learning!",
-    des:'Product Description',
-    intro:"Introducing the Colorful Bead Ladder for Kids, a captivating and educational toy that will keep your child engaged for hours. This beautifully designed bead ladder is not only a fun plaything but also a valuable tool for developing fine motor skills, counting abilities, and color recognition. Watch as your child explores the world of learning through play!",
-    features:'Key Features',
-    lifrst:"Vibrant Colors: The bead ladder boasts a rainbow of eye-catching colors, making it visually stimulating for children.",
-    lisec:"Counting Fun: Each bead is numbered, encouraging children to practice counting and basic math skills.",
-    img:'https://cdn.shopify.com/s/files/1/0750/0251/products/abacus.3_1024x1024.jpg?v=1459519106',
-    headspec:'Specifications:',
-    specone:'Material: Wooden Material -  Safe for Kids',
-    spectwo:'Recommended Age: 3 years and up',
-    specthree:'Package Includes: A Set of Colour Beads with Ladder',
-    specfour:'Encourages the art of learning',
-    benefit:'Benefits:',
-    beneone:'Educational: Promotes early math skills, color recognition, and hand-eye coordination.',
-    benetwo:"Quiet Play: Provides a peaceful and engaging playtime option, ideal for both solo and group play.",
-    safetyinfo:'Safety Information',
-    safetypara:"The Colorful Bead Ladder for Kids is designed with safety as a top priority. It meets all safety standards for children's toys, ensuring worry-free playtime.",
-    conclusion:"Enhance your child's learning journey with the Colorful Bead Ladder for Kids. From counting and color exploration to creative expression, this toy offers a world of possibilities. Order now and let your child's colorful adventure in learning begin!",
-    price:'450.08'
-  },
-  {
-    id:'8',
-    title:'Product Title',
-    frstpara:" Ride-On Car Toy for Kids - Endless Adventures Await!",
-    des:'Product Description',
-    intro:"Introducing our Ride-On Car Toy for Kids, the ultimate companion for your child's adventures. This sleek and stylish ride-on car is designed to provide endless entertainment while promoting physical activity and imaginative play. Watch your little one zoom around and embark on exciting journeys with this exciting toy!",
-    features:'Key Features',
-    lifrst:"Easy to Ride: Designed with a comfortable seat and easy-to-use controls, it's perfect for young riders.",
-    lisec:"Realistic Design: The car's realistic look and details mimic a grown-up automobile, adding to the excitement",
-    img:'https://i5.walmartimages.com/seo/Ride-on-Toy-Remote-Control-Car-for-Kids-by-Hey-Play-Battery-Powered-Toys-for-Boys-and-Girls-2-5-Year-Old-Blue_b3be20a8-994d-45ad-a5c3-c3ffb06f6505_1.d1eb7c67c26b9e8f343f1478864850f8.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF',
-    headspec:'Specifications:',
-    specone:'Material: No Electric Current Passing-  Safe for Kids',
-    spectwo:'Recommended Age: 3 years and up',
-    specthree:'Package Includes: A Car with a Solar Battery',
-    specfour:'Experience the Joy of Ride',
-    benefit:'Benefits:',
-    beneone:'Physical Activity: Encourages outdoor play and physical exercise as kids navigate their world on wheels.',
-    benetwo:"Independence: Fosters a sense of independence and confidence as kids drive their car around.",
-    safetyinfo:'Safety Information',
-    safetypara:"Our Ride-On Car Toy is rigorously tested to meet or exceed all safety standards for children's products. It's built to withstand active play while ensuring your child's safety.",
-    conclusion:"Affordable and exciting, the Ride-On Car Toy is a fantastic addition to your child's playtime. Add it to your cart today and let your child's adventures roll!",
-    price:'890.08'
-  },
-  {
-    id:'9',
-    title:'Product Title',
-    frstpara:"Musical Piano for Kids - A Harmonious Journey of Learning and Fun! ",
-    des:'Product Description',
-    intro:"Introducing our Musical Piano for Kids, a delightful instrument designed to introduce your child to the world of music while igniting their creativity and imagination. This miniature piano is perfect for budding musicians and promises hours of melodic fun. Watch your child's eyes light up as they create beautiful tunes!",
-    features:'Key Features',
-    lifrst:"Kid-Friendly Design: The piano is crafted with small hands in mind, making it easy for young musicians to play and explore.",
-    lisec:"Educational Fun: Music is a powerful tool for enhancing cognitive development and fine motor skills.",
-    img:'https://catchypianos.com/wp-content/uploads/2019/07/Small-piano-for-kids.jpg',
-    headspec:'Specifications:',
-    specone:'Material: No Electric Current Passing-  Safe for Kids',
-    spectwo:'Recommended Age: 3 years and up',
-    specthree:'Package Includes: A Stand with a Keys for Piano',
-    specfour:'Experience the Joy of Music',
-    benefit:'Benefits:',
-    beneone:'Musical Exploration: Encourages a love for music and provides an opportunity to explore different melodies and rhythms.',
-    benetwo:"Educational: Enhances cognitive skills and hand-eye coordination through hands-on musical play.",
-    safetyinfo:'Safety Information',
-    safetypara:"Safety is our top priority. The Musical Piano for Kids is made from child-safe materials and designed with smooth edges to ensure your child's safety during play.",
-    conclusion:" Affordable and harmonious, the Musical Piano for Kids is a fantastic addition to your child's playroom. Add it to your cart today and watch your child's musical talents flourish!",
-    price:'550.08'
-  },
-  {
-   id:'10',
-   title:'Product Title',
-   frstpara:"Kid-Friendly Robot - Spark Imagination and Learning!",
-   des:'Product Description',
-   intro:"Introducing our Kid-Friendly Robot, the perfect companion for your child's adventures in science and technology. This robot is designed to entertain and educate, making it an ideal playmate for curious young minds. Watch as your child explores the world of robotics in a fun and engaging way!",
-   features:'Key Features',
-   lifrst:"Interactive Play: The robot responds to voice commands and gestures, providing hours of interactive entertainment.",
-   lisec:"Educational Fun: Learn about technology, coding, and problem-solving through play.",
-   img:'https://inteng-storage.s3.amazonaws.com/images/NOVEMBER/sizes/best_robot_toys_wowwee_mip_resize_md.jpg',
-   headspec:'Specifications:',
-   specone:'Material: No Electric Current Passing-  Safe for Kids',
-   spectwo:'Recommended Age: 3 years and up',
-   specthree:'Package Includes: A Robot with a Rechargeable Lithium-Ion Battery',
-   specfour:'Experience the Joy of A Robot Friend',
-   benefit:'Benefits:',
-   beneone:'STEM Learning: Encourages an interest in science, technology, engineering, and mathematics',
-   benetwo:"Problem Solving: Develops critical thinking skills as children solve puzzles and challenges.",
-   safetyinfo:'Safety Information',
-   safetypara:"Safety is our priority. The Kid-Friendly Robot is built with child safety in mind, ensuring a secure play experience.",
-   conclusion:"Affordable and educational, the Kid-Friendly Robot is a fantastic addition to your child's playroom. Add it to your cart today and inspire a future engineer or scientist!",
-   price:'1230.08'
-  },
-  {
-    id:'11',
-    title:'Product Title',
-    frstpara:"Persian Cat Toy - The Purrfect Playmate!",
-    des:'Product Description',
-    intro:"Meet our Persian Cat Toy, the cuddly companion that your child will adore. This lifelike stuffed cat is designed to provide endless hours of play and comfort. With its fluffy fur and charming features, it's the ideal addition to any child's stuffed animal collection.",
-    features:'Key Features',
-    lifrst:"Ultra-Soft: Made from high-quality materials, it's incredibly soft to the touch, perfect for snuggling.",
-    lisec:"Durable: Crafted with care to withstand lots of love and play.",
-    img:'https://littleonemag.com/wp-content/uploads/2020/03/71wVAKNjN-L._AC_SL1500_-472x500.jpg',
-    headspec:'Specifications:',
-    specone:'Material: Made with Eco-friendly Fur',
-    spectwo:'Recommended Age: 3 years and up',
-    specthree:'Package Includes: A Cat with its Parts which is adjustable',
-    specfour:'Experience the Joy of A Cat Friend',
-    benefit:'Benefits:',
-    beneone:'Companionship: Provides a loyal and huggable friend for your child.',
-    benetwo:"Comfort: Offers comfort and security, especially at bedtime.",
-    safetyinfo:'Safety Information',
-    safetypara:"Safety is our utmost concern. The Persian Cat Plush Toy is made from child-safe materials, ensuring it's gentle and non-toxic for your little one.",
-    conclusion:"Affordable and lovable, the Persian Cat Plush Toy is a wonderful addition to your child's playroom. Get one today and make memories that will last a lifetime!",
-    price:'230.08'
-  },
-  {
-    id:'12',
-    title:'Product Title',
-   frstpara:"Wooden Train Toy - All Aboard for Fun and Learning!",
-   des:'Product Description',
-   intro:"Introducing our Wooden Train Toy, the classic playtime favorite that combines timeless charm with educational value. This beautifully crafted wooden train is designed to inspire young minds, encouraging creativity, coordination, and hours of imaginative play.",
-   features:'Key Features',
-   lifrst:"Durable Construction: Made from high-quality, eco-friendly wood for long-lasting enjoyment",
-   lisec:"Smooth Wheels: Glides effortlessly on various surfaces for endless adventures.",
-   img:'https://i.pinimg.com/originals/f6/68/2a/f6682abba964740bedd46e9ac38fbf4e.jpg',
-   headspec:'Specifications:',
-   specone:'Material: Soft Wood which is safe for Kids',
-   spectwo:'Recommended Age: 3 years and up',
-   specthree:'Package Includes: A Wooden Engine and its parts like wheels',
-   specfour:'Experience the Joy of a train driving experience',
-   benefit:'Benefits:',
-   beneone:'Educational Fun: Enhances motor skills, hand-eye coordination, and spatial awareness.',
-   benetwo:"Quality Playtime: Provides a break from screen time with enriching, tactile play.",
-   safetyinfo:'Safety Information',
-   safetypara:"Safety is our priority. Our Wooden Train Toy is crafted from non-toxic, child-safe materials, ensuring worry-free playtime..",
-   conclusion:"Affordable and designed to last, this Wooden Train Toy is a delightful addition to any child's toy collection. Get ready for hours of joyful play!",
-   price:'830.90'
-  },
-  {
-    id:'13',
-    title:'Product Title',
-    frstpara:" Kids' Block Shapes - Building Imagination One Block at a Time",
-    des:'Product Description',
-    intro:"Introducing our Kids' Block Shapes, the perfect playtime companion to spark creativity and early learning in your child. These colorful, easy-to-handle blocks offer endless opportunities for building, stacking, and imaginative adventures. Watch as your little one explores shapes, colors, and the world of construction.",
-    features:'Key Features',
-    lifrst:"Vibrant Colors: Engaging hues that captivate young minds and stimulate visual perception.",
-    lisec:"Safe and Durable: Crafted from child-friendly, non-toxic materials for worry-free play.",
-    img:'https://m.media-amazon.com/images/I/51LI7Z9CjhL._SY300_SX300_QL70_FMwebp_.jpg',
-    headspec:'Specifications:',
-    specone:'Material: Non - Toxic , BPA free Plastic',
-    spectwo:'Recommended Age: 3 years and up',
-    specthree:'Package Includes: Variety of Shapes for learning',
-    specfour:'Experience the way of learning with fun ',
-    benefit:'Benefits:',
-    beneone:'Early Learning: Enhances cognitive development by introducing shapes and colors.',
-    benetwo:"Imagination: Fosters creativity as kids build their own structures and stories.",
-    safetyinfo:'Safety Information',
-    safetypara:"Your child's safety is paramount. Our Kids' Block Shapes meet stringent safety standards, guaranteeing a secure and enjoyable playtime experience.",
-    conclusion:"Affordable and designed to last, our Kids' Block Shapes are an excellent investment in your child's early development. Get ready for endless building adventures!",
-    price:'530.90'
-  },
-  {
-    id:'14',
-    title:'Product Title',
-    frstpara:"Kids' Riding Horse Toy - Saddle Up for Adventure!",
-    des:'Product Description',
-    intro:"Experience the thrill of the wild west with our Kids' Riding Horse Toy. This delightful and interactive toy is designed to bring hours of joy and imaginative play to your child. Watch as they embark on exciting equestrian adventures, riding through their own imaginary prairies and trails.",
-    features:'Key Features',
-    lifrst:"Realistic Design: Our riding horse is crafted to resemble a genuine horse, complete with a saddle and reins.",
-    lisec:"Interactive Play: The sturdy construction allows children to sit on the horse, making it feel like a real riding experience.",
-    img:'https://i.ebayimg.com/images/g/t4YAAOSw1NJk6L0W/s-l500.jpg',
-    headspec:'Specifications:',
-    specone:'Material: Non - Toxic , BPA free Plastic',
-    spectwo:'Recommended Age: 3 years and up',
-    specthree:'Package Includes: Smooth and Easy glides wheels for safety ',
-    specfour:'Experience the joy of riding in the horse ',
-    benefit:'Benefits:',
-    beneone:'Balance and Coordination: Enhances motor skills and balance through riding.',
-    benetwo:"Imagination: Sparks creativity as kids create their own stories and adventures..",
-    safetyinfo:'Safety Information',
-    safetypara:"Your child's safety is our top priority. The Kids' Riding Horse Toy is constructed with high-quality, non-toxic materials, ensuring a safe playtime experience.",
-    conclusion:"Affordable and designed for lasting enjoyment, our Kids' Riding Horse Toy is the perfect addition to your child's playtime. Giddy up for hours of fun!",
-    price:'650.90'
+  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      const productId = params['id'];
+      this.product = this.productService.getProductById(productId);
+    });
   }
 
 
 
-];
+addToCart() {
+  const cartItem = {
+    
+    name: this.product.name,
+    price: this.product.price,
+    image: this.product.image
+  };
 
-constructor(private route: ActivatedRoute) { }
+  const existingCartString = localStorage.getItem('cart');
+  const existingCart = existingCartString ? JSON.parse(existingCartString) : [];
 
-ngOnInit() {
-  
-  this.route.params.subscribe(params => {
-    const productId = params['id'];
+  const isProductInCart = existingCart.some((item: { name: any; }) => item.name === this.product.name);
 
-   
-    this.product = this.productDetails.find(item => item.id === productId);
-  });
+  if (!isProductInCart) {
+    existingCart.push(cartItem);
+    localStorage.setItem('cart', JSON.stringify(existingCart));
+  } else {
+    alert('Product is already in the cart');
+  }
+
+  console.log('Add to Cart button clicked');
+  this.router.navigate(['/cart']);
 }
 
-login() {
-  alert("Item added to cart successfully");
+buyproduct(){
+  alert("Add the product to cart!")
 }
 }
-
-
-
-
-
-
-
-

@@ -1,12 +1,13 @@
 
 
 
+
 <h1>Kidzz World</h1>
 <div class="listImages">
     <ng-container *ngFor="let item of productList; let i = index">
         <div class="img">
-            <img [src]="item.img" alt="Toy"/>
-            <p>{{ item.title }}</p>
+            <img [src]="item.image" alt="Toy"/>
+            <p>{{ item.mainname }}</p>
             <p>Price in INR: {{ item.price }}</p>
             <a [routerLink]="['/productdetails', i]">
                 <p>View Details</p>
@@ -14,6 +15,7 @@
         </div>
     </ng-container>
 </div>
+
 
 
 
