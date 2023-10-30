@@ -307,30 +307,48 @@ footer {
     }
 }
 
-.explore{
-    text-align: center;
-    padding-left: 30px;
-}
 
-.explore h3{
-    font-size: 35px;
-    color: crimson;
-}
+.about-us  h3{
+    font-family: Arial, sans-serif;
+    margin-left: 0px;
+    margin: 0 auto;
 
-
-.side-image{
-    width: 100%;
-    height: 100%;
-}
-
-.age{
-    width: 80%;
-    height:100%;
-    padding-left: 120px;
-    text-align: center;
-    padding-top: 50px;
-
-}
-
-
-
+  }
+  
+  .about-us p{
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  /* Style section headings */
+  .section h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  /* Style paragraphs within sections */
+  .section p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  /* Style strong text within paragraphs */
+  .section strong {
+    color: #007BFF; /* You can choose your desired color */
+    font-weight: bold;
+  }
+  
+  /* Style contact information */
+  .section .contact-info p {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  /* Style the 'Visit our Store' and 'Contact Us' sections separately */
+  .section:last-child {
+    background-color: #f4f4f4; /* Add a background color to separate these sections */
+    padding: 20px;
+  }
+  

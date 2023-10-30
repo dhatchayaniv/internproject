@@ -1,141 +1,211 @@
-h1{
-    font-size: 20px;
-    color:blue;
-    font-weight: bolder;
+h1 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
     text-decoration: underline;
-    padding: 8px;
+    padding: 10px;
 }
 
-p{
-    font-size:18px;
-    font-weight: medium;
+p {
+    font-size: 18px;
+    font-weight: normal;
     padding: 5px;
     margin: 0;
 }
 
-.features h4{
-    font-size: 30px;
-    color:blue;
-    font-weight: bolder;
+
+.features h4 {
+    font-size: 28px;
+    color: #007BFF;
+    font-weight: bold;
     text-decoration: underline;
     padding: 5px;
-    
 }
 
-.features p{
-   font-size: 28px;
-   font-weight: medium;
-   padding: 5px;
-   margin: 0;
- }
+.features p {
+    font-size: 18px;
+    font-weight: normal;
+    padding: 5px;
+    margin: 0;
+}
+
 
 .heading {
-    color:red;
+    color: #FF5733;
     font-size: 20px;
-    padding:5px;
-
+    padding: 10px;
 }
 
-.sub-heading{
-    color:blue;
+.sub-heading {
+    color: #007BFF;
     font-size: 18px;
     padding: 10px;
-
 }
 
-.specifications h4{
-    color:blue;
-    font-size: 25px;
-    padding: 0px;
+
+.specifications h4 {
+    color: #007BFF;
+    font-size: 24px;
     text-decoration: underline;
+    padding: 10px;
 }
 
-.benefits h3{
-    color:blue;
+/* Benefits Section */
+.benefits h3 {
+    color: #007BFF;
     font-size: 20px;
-    padding: 0px;
-    text-decoration: underline
+    text-decoration: underline;
+    padding: 10px;
 }
 
-.image-a1{
+.benefits ul li {
+    color: #333;
+    font-size: 18px;
+}
+
+
+.image-a1 {
     display: block;
     float: right;
-    padding-right: 120px;
+    padding-right: 20px;
 }
 
-.benefits ul li{
-    color:black;
-    font-size: 18px;
-}
 
-.safety h4{
+.safety h4 {
     font-size: 20px;
-    color:blue;
-    font-weight: bolder;
+    color: #007BFF;
+    font-weight: bold;
     text-decoration: underline;
-    padding: 5px
+    padding: 10px;
 }
 
-.safety p{
+.safety p {
     font-size: 18px;
-    font-weight: medium;
+    font-weight: normal;
     padding: 5px;
-    margin: 0
+    margin: 0;
 }
+
 
 .price {
-    color:crimson;
+    color: #FF4500;
     font-size: 20px;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
-    border-color: yellow;;
-    border: 15px;
-    border-block: 25px;
     font-weight: bold;
-    text-shadow: solid 1px rgba(168, 113, 95, 0.5);
-} 
-
-
+    text-shadow: 1px 1px 0 rgba(168, 113, 95, 0.5);
+}
 
 .cart {
     text-align: center;
     margin-top: 20px;
-  }
-  
-  
+}
 
-
- 
-
-  button{
-    margin-top:20px;
-    background-color:#5c73c7;
+button {
+    margin-top: 20px;
+    background-color: #007BFF;
+    border: none;
     border-radius: 4px;
     height: 44px;
     font-weight: 600;
-    justify-content: space-between;
-    padding: 10px 20px;
-    letter-spacing: 1px;
-    border: none;
-    background-color: #2a359c;
-    color: #b8b9bd;
-    padding-right: 10px;
-     
-    
+    padding: 0 20px;
+    color: #fff;
+    cursor: pointer;
 }
 
-.buy{
+.buy {
+    text-align: center;
+}
+
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    border: none;
+    background-color: #808ead;
+    color: #333;
+    border-radius: 4px;
+    height: 44px;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.back-button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 100%;
+    color: #333;
+}
+
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
     text-align: center;
 
+  }
+
+  .social-icons {
+    font-size: 30px; 
+    padding-top: 29px ;
 }
 
+  
+  .social-icons a {
+    color: #f1ecec; 
+    margin: 0 10px; 
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f5f5f5; 
+    padding: 20px; 
+    padding-left: 100px;
+  }
+  
+  .content h2 {
+    font-size: 18px; 
+  }
+  
+  .categories, .company-info, .policy, .payment{
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .categories ul, .company-info ul, .policy ul  , .payment ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .categories ul li, .company-info ul li ,.policy ul li , .payment ul li {
+    margin-bottom: 10px;
+  }
 
-@media screen and(max-width:720px) {
-    .image-a1{
-        width: 20px;
-        height: 50px;
+
+@media screen and (max-width: 720px) {
+    .image-a1 {
+        width: auto;
+        height: auto;
     }
-    
 }
-  
-  

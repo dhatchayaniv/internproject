@@ -1,0 +1,38 @@
+
+
+<div class="header">
+    <div class="logo">
+      <a [routerLink]="['/landing']"><h1>Kidz World</h1></a>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a [routerLink]="['/admin']">Home</a></li>
+            <li><a [routerLink]="['/about']">About</a></li>
+            <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="profile-icon">
+        <button class="icon-button" (click)="toggleDropdown()"><i class="fa-solid fa-user"></i></button>
+      <a [routerLink]="'/cart'"><i class="fa-solid fa-cart-shopping"></i></a>
+      <div class="dropdown" *ngIf="isDropdownOpen">
+          <a [routerLink]="['/login']" (click)="logout()">Logout</a>
+          <a [routerLink]="['/userprofile']">My Profile</a>
+
+      </div>
+
+    
+  </div>
+  
+  
+    
+</div>
+
+
+
+
+
+
+    
+

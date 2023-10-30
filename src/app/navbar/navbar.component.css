@@ -275,7 +275,83 @@ footer {
     font-family: cursive;
 }
 
+.profile-icon {
+  padding-right: 50px;
+  position: relative;
+  display: inline-block;
+}
 
+.cart-button{
+  padding-right:0px;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  justify-content: space-between;
+  padding: 5px 30px;
+  
+}
+
+
+.fa-user {
+  font-size: 24px; 
+  color: #f5eded; 
+}
+
+
+
+.fa-cart-shopping{
+  font-size: 24px;
+  color:#f7f6f6;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #dada74;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  z-index: 1;
+}
+
+
+.dropdown a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #eae6e6;
+}
+
+
+.dropdown a:hover {
+  background-color: #e06b22;
+}
+
+.profile-icon:hover .dropdown {
+  display: block;
+  border-radius: 10px solid rgb(16, 16, 16);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background-color: rgb(120, 143, 218); 
+  border: 1px solid #0e0d0d;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color:#bcce21;
+  font-weight: bold;
+  background: radial-gradient(circle, transparent 0%, #000 80%); 
+  animation: glow 4s ease-in-out infinite;
+  position: relative;
+
+  color: #fff; 
+
+}
 
  
 
@@ -331,6 +407,3 @@ footer {
     padding-top: 50px;
 
 }
-
-
-

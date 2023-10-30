@@ -375,7 +375,34 @@ export const productData = [
         price:'650.90',
         image:'https://i.ebayimg.com/thumbs/images/g/FdYAAOSwk1haOiyl/s-l225.webp',
         prodname:'Riding horse',
+      },
+      {
+        id:'15',
+        title:'Product Title',
+        name:"Fun with Realistic Animals- Have Fun",
+        des:'Product Description',
+        intro:"Experience the thrill of the wild west with our Kids' playing animals. This delightful and interactive toy is designed to bring hours of joy and imaginative play to your child. .",
+        features:'Key Features',
+        lifrst:"Realistic Design: Our animals models is crafted to resemble a genuine real animals",
+        lisec:"Interactive Play: The sturdy construction allows children to see the animals , making it feel like a real animals.",
+        img:'https://cf.shopee.com.my/file/46c98f1e3c66481647c9dee26546726c',
+        headspec:'Specifications:',
+        specone:'Material: Non - Toxic , BPA free Plastic',
+        spectwo:'Recommended Age: 3 years and up',
+        specthree:'Package Includes: Washable Animal Models ',
+        specfour:'Experience the joy of playing with animals ',
+        benefit:'Benefits:',
+        beneone:'Balance and Coordination: Enhances creativity skills and the knowledge .',
+        benetwo:"Imagination: Sparks creativity as kids create their own stories and adventures.",
+        safetyinfo:'Safety Information',
+        safetypara:"Your child's safety is our top priority. The Kids' Animal Model oy is constructed with high-quality, non-toxic materials, ensuring a safe playtime experience.",
+        conclusion:"Affordable and designed for lasting enjoyment, our Kids' Animal Model Toy is the perfect addition to your child's playtime. Giddy up for hours of fun!",
+        price:'950.90',
+        image:'https://tse1.mm.bing.net/th?id=OIP.7IiPs1WYzZFGzMChHB_YcwHaHa&pid=Api&P=0&h=18',
+        prodname:'Animal Models',
+
       }
+      
     
     
 ]

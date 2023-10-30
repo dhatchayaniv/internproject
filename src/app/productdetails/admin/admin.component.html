@@ -1,11 +1,56 @@
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
 
-<h1>Kidzz World</h1>
+
+<div class="header">
+    <div class="logo">
+      <a [routerLink]="['/landing']"><h1>Kidz World</h1></a>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a routerLink="/admin">Home</a></li>
+            <li><a [routerLink]="['/about']">About</a></li>
+            <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="profile-icon">
+      <button class="icon-button" (click)="toggleDropdown()"><i class="fa-solid fa-user"></i></button>
+      <a [routerLink]="'/cart'"><i class="fa-solid fa-cart-shopping"></i></a>
+      <div class="dropdown" *ngIf="isDropdownOpen">
+          <a [routerLink]="['/login']" (click)="logout()">Logout</a>
+          <a [routerLink]="['/userprofile']">My Profile</a>
+
+      </div>
+  </div>
+  
+  
+    
+</div>
+
+
+<img src="https://assets.ajio.com/cms/AJIO/WEB/D-1.0-KHP-220923-Topbrands-Z4-shopbyage-header.png" class="age"/>
+
+
+<div class="explore">
+<h3>Explore more</h3>
+<img src="https://static.hopscotch.in/fstatic/product/202310/29353d14-b198-4f86-94dd-2208753e19e5_full.jpg?version=1697099074787&tr=w-480,c-at_max,dpr-2,n-medium"/>
+
+<img src="https://static.hopscotch.in/fstatic/product/202310/01a8bca1-a088-4f77-b99c-bcd1ebd6ee51_full.jpg?version=1697099077149&tr=w-480,c-at_max,dpr-2,n-medium"/>
+
+<img src="https://static.hopscotch.in/fstatic/product/202310/0880aafe-6a17-4441-a0fe-3213b9dd72b9_full.jpg?version=1697099079315&tr=w-480,c-at_max,dpr-2,n-medium"/>
+
+</div>
+
+<h1>Toys For Kids</h1>
+
 <div class="listImages">
     <ng-container *ngFor="let item of productList; let i = index">
         <div class="img">
+           
             <img [src]="item.image" alt="Toy"/>
             <p>{{ item.mainname }}</p>
             <p>Price in INR: {{ item.price }}</p>
@@ -15,6 +60,74 @@
         </div>
     </ng-container>
 </div>
+<div class="content">
+    <div class="categories">
+      <h2>Categories</h2>
+      <ul>
+        <li>Soft toys</li>
+        <li>Safe toys</li>
+        <li>Plush toys</li>
+        <li>Wooden toys</li>
+        <li>Infant toys</li>
+        <li>Educational toys</li>
+        <li>Gifts</li>
+        <li>Preschool Learning</li>
+      </ul>
+    </div>
+  
+    <div class="company-info">
+      <h2>Company Info</h2>
+      <ul>
+        <li>About Us</li>
+        <li>Contact Us</li>
+        <li>Brands</li>
+        <li>F.A.Qs</li>
+      </ul>
+    </div>
+  
+    <div class="policy">
+      <h2>Shipping & policies</h2>
+      <ul>
+        <li>Payments</li>
+        <li>Shipping</li>
+        <li>15 days Replacement</li>
+        <li>Terms of use</li>
+        <li>Privacy Policy</li>
+</ul>
+    </div>
+  
+    <div class="payment">
+        <h2>Payment method</h2>
+        <ul>
+            <li>Credit Cards</li>
+            <li>Net Banking</li>
+            <li>Debit Cards</li>
+            <li>Cash on Delivery COD</li>
+            <li>Easy EMI</li>
+        </ul>
+    </div>
+  
+  </div>
+  
+<footer>
+<div class="copyright">
+    &copy; 2023 Kidz World. All rights reserved.
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank" title="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" title="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      
+
+  </div>
+</footer>
+
 
 
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormDataService } from 'src/app/formdata.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AdminComponent {
 
+
+  
+  isDropdownOpen = false;
+  userService: any;
+
+    toggleDropdown() {
+        this.isDropdownOpen = !this.isDropdownOpen;
+    }
+
   imageSource = 'https://angular.io/assets/images/logos/angular/angular.svg';
   public productList:any=[];
-  constructor(){
+  constructor(private formDataService: FormDataService){
     this.productList = [{
       id:'img',
       image:'https://tse3.mm.bing.net/th?id=OIP.BUk9gI5IkSumf71yBrFUvgHaLg&pid=Api&P=0&h=180',
@@ -99,10 +109,24 @@ export class AdminComponent {
       image:'https://i.ebayimg.com/thumbs/images/g/FdYAAOSwk1haOiyl/s-l225.webp',
       mainname:'Riding Horse',
       price:'650.90'
+    },
+    {
+      id:'img',
+      image:'https://tse1.mm.bing.net/th?id=OIP.7IiPs1WYzZFGzMChHB_YcwHaHa&pid=Api&P=0&h=180',
+      mainname:'Animal Models',
+      price:'950.90'
     }
 ]
   }
   i:number = 0;
+
+  logout() {
+  
+    this.formDataService.clearFormData();
+    this.userService.logout();
+  }
+
+  
 }
 
 

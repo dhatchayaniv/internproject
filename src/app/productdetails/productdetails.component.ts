@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service'; 
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-productdetails',
@@ -20,31 +21,31 @@ export class ProductdetailsComponent implements OnInit {
     });
   }
 
-
-
 addToCart() {
   const cartItem = {
-    
+    id: this.product.id,
     name: this.product.name,
     price: this.product.price,
-    image: this.product.image
+    image: this.product.image,
+    quantity: 0
   };
 
   const existingCartString = localStorage.getItem('cart');
   const existingCart = existingCartString ? JSON.parse(existingCartString) : [];
 
-  const isProductInCart = existingCart.some((item: { name: any; }) => item.name === this.product.name);
+  const existingItem = existingCart.find((item: { name: any; }) => item.name === this.product.name);
 
-  if (!isProductInCart) {
-    existingCart.push(cartItem);
-    localStorage.setItem('cart', JSON.stringify(existingCart));
+  if (existingItem) {
+    existingItem.quantity++; 
   } else {
-    alert('Product is already in the cart');
+    existingCart.push(cartItem);
   }
 
+  localStorage.setItem('cart', JSON.stringify(existingCart));
   console.log('Add to Cart button clicked');
   this.router.navigate(['/cart']);
 }
+
 
 buyproduct(){
   alert("Add the product to cart!")

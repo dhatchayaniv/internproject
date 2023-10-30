@@ -1,6 +1,8 @@
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
+<app-navbar></app-navbar>
 <h1>{{product.title}}</h1>
 <p>{{product.name}}</p>
 
@@ -45,8 +47,6 @@
 
 
 
-
-
 <div class="benefits">
     <h3>{{product.benefit}}</h3>
     <ul>
@@ -71,7 +71,33 @@
     &nbsp; &nbsp;
     <button (click)="buyproduct()">Buy Now</button>
 
-  
+
+    <button class="back-button">
+        <a [routerLink]="['/admin']">
+          <p>Back</p>
+
+      </a>
+      </button>
+
+
+      
+    <footer>
+    <div class="copyright">
+        &copy; 2023 Kidz World. All rights reserved.
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+          
+    
+      </div>
 
 
    

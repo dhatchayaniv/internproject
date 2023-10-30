@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,9 @@ import { AuthService } from 'src/app/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+
+  
 
   form: FormGroup = this.fb.group({
     username: ['', Validators.required],
@@ -21,12 +25,28 @@ export class LoginComponent {
     password: ['', Validators.required]
   });
 
-  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {}
-
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router, private userService: UserService) {}
   login() {
+    const username = this.form.get('username')!.value;
+    const email = this.form.get('email')!.value;
+    const password = this.form.get('password')!.value;
   
-        this.router.navigateByUrl('/admin');
-      }
+    if (username !== null && email !== null && password !== null) {
+      const userDetails = {
+        username: username,
+        email: email,
+        password: password,
+      };
+      localStorage.setItem('userDetails', JSON.stringify(userDetails));
     }
   
+    this.router.navigateByUrl('/admin');
+  }
+  
+
+  
+  
+    }
+  
+
 
