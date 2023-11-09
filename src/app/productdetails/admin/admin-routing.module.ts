@@ -4,6 +4,7 @@ import { AdminComponent } from './admin.component';
 import { ProductdetailsComponent } from '../productdetails.component';
 import { UserProfileComponent } from 'src/app/userprofile/userprofile.component';
 import { AboutComponent } from 'src/app/about/about.component';
+import { FavouriteComponent } from 'src/app/favourite/favourite.component';
 
 
 
@@ -11,14 +12,16 @@ import { AboutComponent } from 'src/app/about/about.component';
 const routes: Routes = [
   {path:'',component:AdminComponent} ,
   {
-    path:'productdetails',component:ProductdetailsComponent
+    path:'',component:ProductdetailsComponent
   }  ,
   {
     path:'',component:UserProfileComponent
   } ,
   {
     path:'',component:AboutComponent
-  },          
+  },
+  { path: '', component: FavouriteComponent }
+
 ];
 
 @NgModule({

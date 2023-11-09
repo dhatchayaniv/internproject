@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service'; 
 import { NavbarComponent } from '../navbar/navbar.component';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-productdetails',
@@ -12,7 +13,8 @@ export class ProductdetailsComponent implements OnInit {
   product: any;
   router: any;
 
-  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+
+  constructor(private route: ActivatedRoute, private productService: ProductService,private cartService: CartService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -21,31 +23,13 @@ export class ProductdetailsComponent implements OnInit {
     });
   }
 
-addToCart() {
-  const cartItem = {
-    id: this.product.id,
-    name: this.product.name,
-    price: this.product.price,
-    image: this.product.image,
-    quantity: 0
-  };
-
-  const existingCartString = localStorage.getItem('cart');
-  const existingCart = existingCartString ? JSON.parse(existingCartString) : [];
-
-  const existingItem = existingCart.find((item: { name: any; }) => item.name === this.product.name);
-
-  if (existingItem) {
-    existingItem.quantity++; 
-  } else {
-    existingCart.push(cartItem);
+  addToCart() {
+    this.cartService.addToCart(this.product);
+    console.log('Add to Cart button clicked');
+    this.router.navigate(['/cart']);
+    alert("Item is added to cart")
   }
-
-  localStorage.setItem('cart', JSON.stringify(existingCart));
-  console.log('Add to Cart button clicked');
-  this.router.navigate(['/cart']);
-}
-
+  
 
 buyproduct(){
   alert("Add the product to cart!")

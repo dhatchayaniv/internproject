@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
@@ -6,7 +5,17 @@
 
 <div class="header">
     <div class="logo">
-      <a [routerLink]="['/landing']"><h1>Kidz World</h1></a>
+      <div class="logo-container"><a [routerLink]="['/landing']"><h1>Kidz World</h1></a>
+    
+      
+
+
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search for products" (input)="filterProducts($event)"/>
+      </div>
+      
+    </div>
     </div>
     <nav class="navbar">
         <ul>
@@ -14,22 +23,50 @@
             <li><a [routerLink]="['/about']">About</a></li>
             <li><a routerLink="/contact">Contact</a></li>
         </ul>
+        
     </nav>
 
 
     <div class="profile-icon">
+      <a [routerLink]="'/favourite'"><i class="fas fa-heart"></i></a>
       <button class="icon-button" (click)="toggleDropdown()"><i class="fa-solid fa-user"></i></button>
+
+   
       <a [routerLink]="'/cart'"><i class="fa-solid fa-cart-shopping"></i></a>
       <div class="dropdown" *ngIf="isDropdownOpen">
           <a [routerLink]="['/login']" (click)="logout()">Logout</a>
           <a [routerLink]="['/userprofile']">My Profile</a>
-
+   
       </div>
+
   </div>
   
   
     
 </div>
+
+
+
+<div class="product-list">
+  <div *ngFor="let item of filteredProducts">
+    <h5 class="searchhead">Search Results Found</h5>
+    <div class="img">
+      
+      <a [routerLink]="['/productdetails', i]">
+      <img [src]="item.image" alt="{{ item.mainname }}" />
+      </a>
+      <a [routerLink]="['/favourite']">
+        <i class="fas fa-heart" (click)="addToFavorites(item)" [ngClass]="{'favourited': isProductInFavorites(item)}"></i>
+      </a>
+      <h3>{{ item.mainname }}</h3>
+      <p>Price: {{ item.price }}</p>
+      <a [routerLink]="'/cart'"><button (click)="addToCart(item)" class="cart">Add to Cart</button></a>
+    </div>
+  </div>
+</div>
+
+
+
 
 
 <img src="https://assets.ajio.com/cms/AJIO/WEB/D-1.0-KHP-220923-Topbrands-Z4-shopbyage-header.png" class="age"/>
@@ -47,19 +84,23 @@
 
 <h1>Toys For Kids</h1>
 
+
+
+
 <div class="listImages">
-    <ng-container *ngFor="let item of productList; let i = index">
-        <div class="img">
-           
-            <img [src]="item.image" alt="Toy"/>
-            <p>{{ item.mainname }}</p>
-            <p>Price in INR: {{ item.price }}</p>
-            <a [routerLink]="['/productdetails', i]">
-                <p>View Details</p>
-            </a>
-        </div>
-    </ng-container>
+  <ng-container *ngFor="let item of productList; let i = index">
+    <div class="img">
+      <a [routerLink]="['/productdetails', i]">
+        <a [routerLink]="'/favourite'"><i class="fas fa-heart" (click)="addToFavorites(item)" [class.favourited]="isProductInFavorites(item)"></i></a>
+        <img [src]="item.image" alt="Toy"/>
+      </a>
+      <p>{{ item.mainname }}</p>
+      <p>Price in INR: {{ item.price }}</p>
+      <a [routerLink]="'/cart'"><button (click)="addToCart(item)" class="cart">Add to Cart</button></a>
+    </div>
+  </ng-container>
 </div>
+
 <div class="content">
     <div class="categories">
       <h2>Categories</h2>
@@ -128,6 +169,12 @@
   </div>
 </footer>
 
+
+
+
+
+
+    
 
 
 

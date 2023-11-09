@@ -16,6 +16,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './productdetails/admin/admin.component';
 import { ContactComponent } from './contact/contact.component';
+import { FavouriteComponent } from './favourite/favourite.component';
+import { CartService } from './cart/cart.service';
+import { FavoriteService } from './favourite/favourite.service';
+
+
 
 
 
@@ -28,7 +33,8 @@ const routes: Routes = [
   {path:'profileupdate',component:ProfileupdateComponent},
   {path:'landing',component:LandingComponent},
   {path:'admin',component:AdminComponent},
-  {path:'contact',component:ContactComponent}
+  {path:'contact',component:ContactComponent},
+  {path:'favourite',component:FavouriteComponent}
 ];
 
 
@@ -43,7 +49,9 @@ const routes: Routes = [
     AboutComponent,
     NavbarComponent,
     ContactComponent,
-    LandingComponent
+    LandingComponent,
+    FavouriteComponent,
+
     
 
   
@@ -62,7 +70,7 @@ const routes: Routes = [
    
   ],
 
-  providers: [UserService],
+  providers: [UserService,CartService,FavoriteService],
   bootstrap: [AppComponent]
 
 })

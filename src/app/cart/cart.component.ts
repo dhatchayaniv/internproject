@@ -19,7 +19,7 @@ export class CartComponent implements OnInit {
     const storedCartString = localStorage.getItem('cart');
     this.cartItems = storedCartString !== null ? JSON.parse(storedCartString) : [];
 
-    // Ensure each item has a quantity property
+ 
     this.cartItems.forEach(item => {
       if (!item.quantity) {
         item.quantity = 1;

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { productData } from '../productdata';
-
+import { FavouriteComponent } from 'src/app/favourite/favourite.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { ProductService } from '../../product.service';
@@ -16,6 +16,6 @@ import { CartComponent } from 'src/app/cart/cart.component';
     CommonModule,
     AdminRoutingModule,
     
-  ]
+  ] 
 })
 export class AdminModule { }

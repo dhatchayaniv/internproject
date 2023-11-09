@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AdminComponent } from './productdetails/admin/admin.component';
 import { ContactComponent } from './contact/contact.component';
 import { LandingComponent } from './public/landing/landing/landing.component';
+import { FavouriteComponent } from './favourite/favourite.component';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./public/public.module').then((m) => m.PublicModule) },
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'about',component:AboutComponent},
   {path:'navbar',component:NavbarComponent},
   {path:'contact',component:ContactComponent},
-  {path:'landing',component:LandingComponent}
+  {path:'landing',component:LandingComponent},
+  {path:'favourite',component:FavouriteComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+<app-navbar></app-navbar>
+
+<button class="back-button">
+  <a [routerLink]="['/admin']">
+    <p>Back</p>
+
+</a>
+</button>
+<div class="cart-items">
+<h2 class="heading">Favourite List</h2>
+<div *ngIf="favoriteProducts.length === 0" class="empty">You have no Favourite items.! Add your favourites </div>
+ <div *ngFor="let item of favoriteProducts; let i = index" class="product-details">
+
+  <div>
+    <img [src]="item.image" alt="Toy" class="product-image" />
+  </div>
+
+  <div class="product-name">{{ item.mainname }}<br><span class="product-price">Price: {{ item.price }}</span> <br>
+    <button (click)="removeItem(i)" class="button" id="remove">Remove from Favourites</button>
+  
+    <a [routerLink]="'/cart'"><button (click)="addToCart(item)" class="cart">Add to Cart</button></a>
+  
+  </div>
+</div>
+
+
+<div class="content">
+  <div class="categories">
+    <h2>Categories</h2>
+    <ul>
+      <li>Soft toys</li>
+      <li>Safe toys</li>
+      <li>Plush toys</li>
+      <li>Wooden toys</li>
+      <li>Infant toys</li>
+      <li>Educational toys</li>
+      <li>Gifts</li>
+      <li>Preschool Learning</li>
+    </ul>
+  </div>
+
+  <div class="company-info">
+    <h2>Company Info</h2>
+    <ul>
+      <li>About Us</li>
+      <li>Contact Us</li>
+      <li>Brands</li>
+      <li>F.A.Qs</li>
+    </ul>
+  </div>
+
+  <div class="policy">
+    <h2>Shipping & policies</h2>
+    <ul>
+      <li>Payments</li>
+      <li>Shipping</li>
+      <li>15 days Replacement</li>
+      <li>Terms of use</li>
+      <li>Privacy Policy</li>
+</ul>
+  </div>
+
+  <div class="payment">
+      <h2>Payment method</h2>
+      <ul>
+          <li>Credit Cards</li>
+          <li>Net Banking</li>
+          <li>Debit Cards</li>
+          <li>Cash on Delivery COD</li>
+          <li>Easy EMI</li>
+      </ul>
+  </div>
+
+</div>
+
+<footer>
+<div class="copyright">
+  &copy; 2023 Kidz World. All rights reserved.
+  <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank" title="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank" title="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    
+
+</div>
+</footer>
